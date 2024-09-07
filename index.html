@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+ <!-- Load html2pdf from CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Greeting Section -->
+        <section class="greeting-section">
+            <h1>Welcome to the Resume Builder</h1>
+            <p>Let’s get started by filling in the details, and we’ll help you create a professional resume.</p>
+            <button id="startResumeButton">Create Your Resume</button>
+        </section>
+
+      <!-- Resume Form Section (initially hidden) -->
+<section class="resume-form-section" id="resumeFormSection" style="display:none;">
+    <h2>Create Your Resume</h2>
+    <form id="resumeForm">
+        <label for="profileImage">Profile Image</label>
+        <input type="file" id="profileImage" accept="image/*">
+
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Enter your address" required>
+        
+        <label for="education">Education</label>
+        <textarea id="education" placeholder="Enter your education details" required></textarea>
+        <div id="additionalEducation"></div>
+        <button type="button" id="addEducationButton">Add More Education</button>
+        
+        <label for="experience">Experience</label>
+        <textarea id="experience" placeholder="Enter your work experience" required></textarea>
+        <div id="additionalExperience"></div>
+        <button type="button" id="addExperienceButton">Add More Experience</button>
+
+        <label for="skills">Skills</label>
+        <input type="text" id="skills" placeholder="Enter a skill" required>
+        <div id="additionalSkills"></div>
+        <button type="button" id="addSkillButton">Add More Skill</button>
+
+        <div class="final-buttons">
+            <button type="button" id="generateResumeButton">Generate Resume</button>
+            
+        </div>
+    </form>
+        </section>
+
+        <!-- Generated Resume Section -->
+        <section class="generated-resume" id="generatedResume" style="display:none;">
+            <!-- Personal Information -->
+            <section class="personal-info">
+                <img id="profilePic" alt="Profile Picture" class="profile-pic">
+                <h1 id="displayFullName"></h1>
+                <p id="displayUsername"></p>
+                <p id="displayEmail"></p>
+                <p id="displayPhone"></p>
+                <p id="displayAddress"></p>
+            </section>
+
+            <!-- Education Section -->
+            <section class="education" id="educationSection">
+                <h2>Education</h2>
+                <p id="displayEducation"></p>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience" id="experienceSection">
+                <h2>Experience</h2>
+                <p id="displayExperience"></p>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills" id="skillsSection">
+                <h2>Skills</h2>
+                <ul id="displaySkills"></ul>
+            </section>
+
+            <!-- Buttons for sharing and downloading resume -->
+            <div class="buttons">
+                <button id="downloadResumeButton">Download PDF</button>
+                <button id="shareResumeButton">Share Resume</button>
+            </div>
+
+            <!-- Shareable Link -->
+            <div id="shareableLink" style="display:none;">
+                <p>Share this link: <span id="generatedLink"></span></p>
+                <button id="copyLinkButton">Copy Link</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</body>
+</html>
